@@ -6,9 +6,11 @@ Implement the UserRepository interface using two different storage strategies:
 
 📁 Project Architecture
 ```
-project/
-├── user.go              # Interface + User struct (GIVEN)
+project/           
 ├── main.go              # Test suite (GIVEN)
+├── user                 # Interface + User struct (GIVEN)
+|   ├── repo.go
+|   └── user.go
 ├── sliceRepo/
 │   └── slice_repo.go    # Slice implementation (YOU WRITE)
 ├── mapRepo/
