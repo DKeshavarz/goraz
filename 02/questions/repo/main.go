@@ -3,33 +3,13 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"goraz/module2/repo/user"
 	"os"
 	"reflect"
 	"strings"
 )
 
-// User represents a user in our system
-type User struct {
-	ID    int
-	Name  string
-	Email string
-	Age   int
-}
 
-// UserRepository defines the interface for user data operations
-type userRepository interface {
-	// Save stores a new user. Returns error if user already exists.
-	Save(user User) error
-
-	// FindByID retrieves a user by ID. Returns error if not found.
-	FindByID(id int) (User, error)
-
-	// Delete removes a user by ID. Returns error if not found.
-	Delete(id int) error
-
-	// List returns all users. Returns empty slice if none exist.
-	List() ([]User, error)
-}
 
 func main() {
 
@@ -44,7 +24,7 @@ func main() {
 	choice, _ := reader.ReadString('\n')
 	choice = strings.TrimSpace(choice)
 
-	var repo userRepository
+	var repo user.UserRepository
 	switch choice {
 	case "1":
 		fmt.Println("\nSLICE REPOSITORY")
@@ -60,7 +40,7 @@ func main() {
 	runTests(repo)
 }
 
-func runTests(repo userRepository) {
+func runTests(repo user.UserRepository) {
 	fmt.Println("=== RUNNING TESTS ===")
 
 	// Test 0: check null
@@ -83,9 +63,9 @@ func runTests(repo userRepository) {
 
 	// Test 2: Add three users
 	fmt.Println("\n📝 Test 2: Add three users")
-	user1 := User{ID: 1, Name: "Alice", Email: "alice@email.com", Age: 28}
-	user2 := User{ID: 2, Name: "Bob", Email: "bob@email.com", Age: 34}
-	user3 := User{ID: 3, Name: "Charlie", Email: "charlie@email.com", Age: 22}
+	user1 := user.User{ID: 1, Name: "Alice", Email: "alice@email.com", Age: 28}
+	user2 := user.User{ID: 2, Name: "Bob", Email: "bob@email.com", Age: 34}
+	user3 := user.User{ID: 3, Name: "Charlie", Email: "charlie@email.com", Age: 22}
 
 	err = repo.Save(user1)
 	if err != nil {
@@ -152,7 +132,7 @@ func runTests(repo userRepository) {
 	if err != nil {
 		fmt.Printf("  ❌ List failed: %v\n", err)
 	} else {
-		expectedUsers := []User{user1, user3}
+		expectedUsers := []user.User{user1, user3}
 		if len(allUsers) == len(expectedUsers) {
 			fmt.Printf("  ✅ Correct number of users: %d\n", len(allUsers))
 
@@ -188,7 +168,7 @@ func runTests(repo userRepository) {
 
 	// Test 8: Add user with duplicate ID (should fail)
 	fmt.Println("\n📝 Test 8: Add user with duplicate ID")
-	duplicateUser := User{ID: 1, Name: "Duplicate", Email: "dup@email.com", Age: 99}
+	duplicateUser := user.User{ID: 1, Name: "Duplicate", Email: "dup@email.com", Age: 99}
 	err = repo.Save(duplicateUser)
 	if err != nil {
 		fmt.Printf("  ✅ Correctly rejected duplicate ID: %v\n", err)
