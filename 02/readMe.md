@@ -1,6 +1,6 @@
 # GoRaz - Module 2: Concurrency & Package Design
 
-Welcome to Module 1! We will discover about `Post oop` pattern more and dive into Concurrency.
+Welcome to Module 2! We will discover about `Post oop` pattern more and dive into Concurrency.
 
 ## Topics:
 
