@@ -1,10 +1,4 @@
-This is a great addition. Dockerizing a Go application using multi-stage builds is a critical "Day 1" skill for any backend developer. It keeps your final image tiny by excluding the source code and build tools.
-
-Here is the updated assignment with the Docker requirement included.
-
-***
-
-# Module 3: The Native HTTP Server
+# The HTTP Server
 ## Assignment
 Build a performant web server using **only** Go's standard library. You are strictly forbidden from using third-party web frameworks. You must implement custom logging middleware and containerize your application using a multi-stage Dockerfile.
 
