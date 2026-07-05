@@ -51,4 +51,4 @@ All questions and assignments are available on Quera. Complete them in order.
 * **Go Web Examples:** [gowebexamples.com](https://gowebexamples.com/) (Great hands-on snippets for HTTP servers)
 * **Official Go Tutorial:** [Developing a RESTful API with Go and Gin](https://go.dev/doc/tutorial/web-service-gin)
 * **PostgreSQL & Go:** [pgx documentation](https://github.com/jackc/pgx)
-* **Dockerizing Go:** [Docker Official Guide for Go](https://docs.docker.com/language/go/)
+* **Dockerizing Go:** [Docker Official Guide for Go](https://docs.docker.com/guides/golang/)
