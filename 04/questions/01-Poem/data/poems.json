@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Sad Cat",
+    "lines": [
+        "Thursday settles in like rain.",
+        "The cat is alone—again.",
+        "Pacing the same cold floor,",
+        "the same dim light,",
+        "the same soft sigh.",
+        "He asks the window,",
+        "he asks the wall:",
+        "When will this end?",
+        "No one answers at all."
+    ],
+    "picture": "/static/cat.png"
+  },
+  {
+    "name": "Rain",
+    "lines": [
+      "Soft drops touch the ground,",
+      "Clouds whisper the town,",
+      "The earth drinks quietly."
+    ]
+  }
+]
