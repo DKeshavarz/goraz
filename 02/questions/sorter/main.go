@@ -2,19 +2,12 @@ package main
 
 import (
 	"fmt"
+	"goraz/module2/sorter/user"
 )
-
-// User represents a user in our system
-type User struct {
-	ID    int
-	Name  string
-	Email string
-	Age   int
-}
 
 // SortStrategy defines the interface for sorting strategies
 type SortStrategy interface {
-	Sort(users []User) []User
+	Sort(users []user.User) []user.User
 }
 
 // Context
@@ -30,7 +23,7 @@ func (us *UserSorter) SetStrategy(strategy SortStrategy) {
 	us.strategy = strategy
 }
 
-func (us *UserSorter) ExecuteSort(users []User) []User {
+func (us *UserSorter) ExecuteSort(users []user.User) []user.User {
 	return us.strategy.Sort(users)
 }
 
@@ -38,7 +31,7 @@ func (us *UserSorter) ExecuteSort(users []User) []User {
 
 func main() {
 	// Sample users
-	users := []User{
+	users := []user.User{
 		{ID: 3, Name: "Charlie", Email: "charlie@email.com", Age: 22},
 		{ID: 1, Name: "Alice", Email: "alice@email.com", Age: 28},
 		{ID: 4, Name: "Diana", Email: "diana@email.com", Age: 30},
@@ -74,7 +67,7 @@ func main() {
 
 // ========== HELPER FUNCTIONS ==========
 
-func printUsers(title string, users []User) {
+func printUsers(title string, users []user.User) {
 	fmt.Printf("\n%s:\n", title)
 	fmt.Println("─────────────────────────────────────")
 	for _, u := range users {

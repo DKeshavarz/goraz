@@ -15,12 +15,13 @@ You need to create sorting strategies that can sort users by:
 
 ```
 project/
-├── main.go              # GIVEN - Contains User, SortStrategy, main()
+├── main.go              # GIVEN - SortStrategy, main()
+├── user/
+│   └── user.go          # GIVEN - Contains User
 ├── sorter/
 │   └── sorter.go        # YOU WRITE - Strategy implementations
 └── go.mod
 ```
-
 
 ## Task
 
