@@ -38,7 +38,7 @@ func main() {
 	}
 
 	// 5. Add a new user
-	newUser := user.User{/*ID: 3, Name: "Charlie", Email: "charlie@example.com"*/}
+	newUser := user.User{/*ID: 3, Name: "Charlie"*/}
 
 	err = repo.Add(newUser)
 	if err != nil {
